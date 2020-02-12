@@ -1,31 +1,66 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Templates/Default/default_layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-lg-12">
+        <h1 class="page-header">Accueil</h1>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+</div><!--/.row-->
+<div class="col-xs-12 col-md-6 col-lg-3">
+    <a href="@Url.Action("Index","Orders")">
+        <div class="panel panel-orange panel-widget">
+            <div class="row no-padding">
+                <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph table"><use xlink:href="#stroked-table"></use></svg>
+                </div>
+                <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="text-muted">Orders</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-xs-12 col-md-6 col-lg-3">
+    <a href="@Url.Action("Index","Customers")">
+        <div class="panel panel-teal panel-widget">
+            <div class="row no-padding">
+                <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>
+                </div>
+                <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="text-muted">Customers</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-xs-12 col-md-6 col-lg-3">
+    <a href="@Url.Action("Index","Products")">
+        <div class="panel panel-blue panel-widget ">
+            <div class="row no-padding">
+                <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked clock"><use xlink:href="#stroked-clock"></use></svg>
+                </div>
+                <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="text-muted">Products</div>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="col-xs-12 col-md-6 col-lg-3">
+    <a href="@Url.Action("Index","Profiles")">
+        <div class="panel panel-red panel-widget">
+            <div class="row no-padding">
+                <div class="col-sm-3 col-lg-5 widget-left">
+                    <svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></use></svg>
+                </div>
+                <div class="col-sm-9 col-lg-7 widget-right">
+                    <div class="text-muted">Profile</div>
+                </div>
+            </div>
+        </div>
+    </a>
 </div>
