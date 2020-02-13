@@ -61,6 +61,40 @@ namespace aspnet_tutorial.Controllers
             return View(user);
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public ActionResult Login(user user)
+        {
+            var v = from p in db.profiles
+                join u in db.users
+                    on p.profile_id equals u.fk_profile_id
+                where (u.username == user.username && u.pwd == user.pwd)
+                select new
+                {
+                    profile_name = p.profile_name,
+                    username = u.username
+                };
+
+            var result = v.FirstOrDefault();
+
+            if (result != null)
+            {
+                Session["username"] = result.username;
+                if (result.profile_name == "admin")
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View(user);
+        }
+
         // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
