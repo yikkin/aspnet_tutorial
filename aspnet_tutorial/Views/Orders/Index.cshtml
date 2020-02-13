@@ -5,48 +5,52 @@
     Layout = "~/Views/Templates/Default/default_layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<div class="col-lg-12">
+<div class="panel panel-default">
+<div class="panel-heading">Orders</div>
+<div class="panel-body">
+<a href="@Url.Action("Create","Orders")"
+   class="btn btn-primary">New</a>
+<table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true"
+       data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true"
+       data-sort-name="name" data-sort-order="desc">
+    <thead>
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.qty)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.total)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.customer.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.product.product_name)
-        </th>
-        <th></th>
-    </tr>
+        <th data-sortable="true">Order id</th>
+        <th data-sortable="true">Customer name</th>
+        <th data-sortable="true">Product name</th>
+        <th data-sortable="true">Qty</th>
+        <th data-sortable="true">Total</th>
+        <th data-sortable="true">Option</th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.qty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.customer.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.product.product_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.order_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.order_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.order_id })
-        </td>
     </tr>
-}
+    </thead>
+                <tbody>
+                @foreach (var item in Model) {
+                        <tr>
+                        <td>@Html.DisplayFor(modelItem => item.order_id)</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.customer.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.product.product_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.qty)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.total)
+                        </td>
 
-</table>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new {id = item.order_id}) |
+                            @Html.ActionLink("Details", "Details", new {id = item.order_id}) |
+                            @Html.ActionLink("Delete", "Delete", new {id = item.order_id})
+                        </td>
+                        </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
