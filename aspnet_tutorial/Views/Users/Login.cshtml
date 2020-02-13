@@ -1,4 +1,5 @@
-﻿
+﻿@model aspnet_tutorial.Models.user
+
 @{
     Layout = null;
 }
@@ -6,12 +7,33 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-</head>
+@RenderPage("~/Views/Inc/head.cshtml")
 <body>
-    <div> 
-    </div>
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">ASP.NET TUTORIAL | SIMPLE STORE MANAGEMENT </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <fieldset>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.username, new {@class="form-control",placeholder="Enter your username",autofocus=""})
+                            @Html.ValidationMessageFor(model => model.username,"",new {@class="error-text"})
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(model => model.pwd, new {@class="form-control",placeholder="Enter your password"})
+                            @Html.ValidationMessageFor(model=>model.pwd)
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enter</button>
+                        <button type="reset" class="btn btn-reset">Reset</button>
+                    </fieldset>
+                }
+                
+            </div>
+        </div>
+    </div><!-- /.col-->
+</div><!-- /.row -->
 </body>
 </html>
