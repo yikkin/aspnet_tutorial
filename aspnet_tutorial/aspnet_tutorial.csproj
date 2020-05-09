@@ -435,7 +435,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Inc\head.cshtml" />
     <Content Include="Views\Inc\nav.cshtml" />
-    <Content Include="Views\Inc\scripts.cshtml" />
     <Content Include="Views\Inc\sidebar.cshtml" />
     <Content Include="Views\Templates\Default\default_layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
