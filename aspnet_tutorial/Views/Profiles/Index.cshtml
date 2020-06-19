@@ -4,31 +4,44 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Templates/Default/default_layout.cshtml";
 }
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">User profile</div>
+        <div class="panel-body">
+            <a href="@Url.Action("Create","Profiles")"
+               class="btn btn-primary">New</a>
+            <table data-toggle="table" data-url="" data-show-refresh="true" data-show-toggle="true"
+                   data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true"
+                   data-sort-name="name" data-sort-order="desc">
+                <thead>
+                    <tr>
+                        <th data-sortable="true">ID</th>
+                        <th data-sortable="true">Profile name</th>
+                        <th data-sortable="true">Options</th>
 
-<h2>Index</h2>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.profile_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.profile_name)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.profile_id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.profile_id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.profile_id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.profile_name)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.profile_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.profile_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.profile_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.profile_id })
-        </td>
-    </tr>
-}
-
-</table>
+            </table>
+        </div>
+    </div>
+</div>
