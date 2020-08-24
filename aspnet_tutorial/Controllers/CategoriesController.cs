@@ -46,7 +46,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cat_id,cat_name")] category category)
+        public ActionResult Create([Bind(Include = "id,cat_name")] category category)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cat_id,cat_name")] category category)
+        public ActionResult Edit([Bind(Include = "id,cat_name")] category category)
         {
             if (ModelState.IsValid)
             {
