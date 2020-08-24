@@ -39,7 +39,7 @@ namespace aspnet_tutorial.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.fk_cat_id = new SelectList(db.categories, "cat_id", "cat_name");
+            ViewBag.category_id = new SelectList(db.categories, "id", "cat_name");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "product_id,fk_cat_id,product_name,unit_price")] product product)
+        public ActionResult Create([Bind(Include = "id,category_id,product_name,unit_price")] product product)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace aspnet_tutorial.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.fk_cat_id = new SelectList(db.categories, "cat_id", "cat_name", product.fk_cat_id);
+            ViewBag.category_id = new SelectList(db.categories, "category_id", "cat_name", product.category_id);
             return View(product);
         }
 
@@ -73,7 +73,7 @@ namespace aspnet_tutorial.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.fk_cat_id = new SelectList(db.categories, "cat_id", "cat_name", product.fk_cat_id);
+            ViewBag.category_id = new SelectList(db.categories, "id", "cat_name", product.category_id);
             return View(product);
         }
 
@@ -82,7 +82,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "product_id,fk_cat_id,product_name,unit_price")] product product)
+        public ActionResult Edit([Bind(Include = "id,category_id,product_name,unit_price")] product product)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace aspnet_tutorial.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.fk_cat_id = new SelectList(db.categories, "cat_id", "cat_name", product.fk_cat_id);
+            ViewBag.category_id = new SelectList(db.categories, "id", "cat_name", product.category_id);
             return View(product);
         }
 
