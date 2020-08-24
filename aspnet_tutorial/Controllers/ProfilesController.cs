@@ -46,7 +46,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "profile_id,profile_name")] profile profile)
+        public ActionResult Create([Bind(Include = "id,profile_name")] profile profile)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "profile_id,profile_name")] profile profile)
+        public ActionResult Edit([Bind(Include = "id,profile_name")] profile profile)
         {
             if (ModelState.IsValid)
             {
