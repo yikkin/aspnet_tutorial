@@ -39,7 +39,7 @@ namespace aspnet_tutorial.Controllers
         // GET: Users/Create
         public ActionResult Create()
         {
-            ViewBag.fk_profile_id = new SelectList(db.profiles, "profile_id", "profile_name");
+            ViewBag.profile_id = new SelectList(db.profiles, "id", "profile_name");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id_user,fk_profile_id,username,pwd,created_at")] user user)
+        public ActionResult Create([Bind(Include = "id,profile_id,first_name,last_name,email,username,pwd")] user user)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace aspnet_tutorial.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.fk_profile_id = new SelectList(db.profiles, "profile_id", "profile_name", user.fk_profile_id);
+            ViewBag.profile_id = new SelectList(db.profiles, "id", "profile_name", user.profile_id);
             return View(user);
         }
 
@@ -73,7 +73,7 @@ namespace aspnet_tutorial.Controllers
         {
             var v = from p in db.profiles
                 join u in db.users
-                    on p.profile_id equals u.fk_profile_id
+                    on p.id equals u.profile_id
                 where (u.username == user.username && u.pwd == user.pwd)
                 select new
                 {
@@ -107,7 +107,7 @@ namespace aspnet_tutorial.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.fk_profile_id = new SelectList(db.profiles, "profile_id", "profile_name", user.fk_profile_id);
+            ViewBag.profile_id = new SelectList(db.profiles, "id", "profile_name", user.profile_id);
             return View(user);
         }
 
@@ -116,7 +116,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id_user,fk_profile_id,username,pwd,created_at")] user user)
+        public ActionResult Edit([Bind(Include = "id,profile_id,first_name,last_name,email,username,pwd")] user user)
         {
             if (ModelState.IsValid)
             {
@@ -124,7 +124,7 @@ namespace aspnet_tutorial.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.fk_profile_id = new SelectList(db.profiles, "profile_id", "profile_name", user.fk_profile_id);
+            ViewBag.profile_id = new SelectList(db.profiles, "profile_id", "profile_name", user.profile_id);
             return View(user);
         }
 
