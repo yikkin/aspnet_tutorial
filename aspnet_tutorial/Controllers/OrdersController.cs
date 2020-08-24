@@ -39,8 +39,8 @@ namespace aspnet_tutorial.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.fk_customer_id = new SelectList(db.customers, "customer_id", "name");
-            ViewBag.fk_product_id = new SelectList(db.products, "product_id", "product_name");
+            ViewBag.customer_id = new SelectList(db.customers, "id", "name");
+            ViewBag.product_id = new SelectList(db.products, "id", "product_name");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "order_id,fk_customer_id,fk_product_id,qty,total")] order order)
+        public ActionResult Create([Bind(Include = "id,customer_id,product_id,qty,total")] order order)
         {
             if (ModelState.IsValid)
             {
@@ -58,8 +58,8 @@ namespace aspnet_tutorial.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.fk_customer_id = new SelectList(db.customers, "customer_id", "name", order.fk_customer_id);
-            ViewBag.fk_product_id = new SelectList(db.products, "product_id", "product_name", order.fk_product_id);
+            ViewBag.customer_id = new SelectList(db.customers, "customer_id", "name", order.customer_id);
+            ViewBag.product_id = new SelectList(db.products, "product_id", "product_name", order.product_id);
             return View(order);
         }
 
@@ -75,8 +75,8 @@ namespace aspnet_tutorial.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.fk_customer_id = new SelectList(db.customers, "customer_id", "name", order.fk_customer_id);
-            ViewBag.fk_product_id = new SelectList(db.products, "product_id", "product_name", order.fk_product_id);
+            ViewBag.customer_id = new SelectList(db.customers, "id", "name", order.customer_id);
+            ViewBag.product_id = new SelectList(db.products, "id", "product_name", order.product_id);
             return View(order);
         }
 
@@ -85,7 +85,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "order_id,fk_customer_id,fk_product_id,qty,total")] order order)
+        public ActionResult Edit([Bind(Include = "id,customer_id,product_id,qty,total")] order order)
         {
             if (ModelState.IsValid)
             {
@@ -93,8 +93,8 @@ namespace aspnet_tutorial.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.fk_customer_id = new SelectList(db.customers, "customer_id", "name", order.fk_customer_id);
-            ViewBag.fk_product_id = new SelectList(db.products, "product_id", "product_name", order.fk_product_id);
+            ViewBag.customer_id = new SelectList(db.customers, "customer_id", "name", order.customer_id);
+            ViewBag.product_id = new SelectList(db.products, "product_id", "product_name", order.product_id);
             return View(order);
         }
 
