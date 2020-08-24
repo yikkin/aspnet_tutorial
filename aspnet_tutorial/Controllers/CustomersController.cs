@@ -46,7 +46,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "customer_id,name,tel,address")] customer customer)
+        public ActionResult Create([Bind(Include = "id,name,email,tel,address")] customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace aspnet_tutorial.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "customer_id,name,tel,address")] customer customer)
+        public ActionResult Edit([Bind(Include = "id,name,email,tel,address")] customer customer)
         {
             if (ModelState.IsValid)
             {
