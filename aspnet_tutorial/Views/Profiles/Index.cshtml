@@ -26,15 +26,15 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.profile_id)
+                                @Html.DisplayFor(modelItem => item.id)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.profile_name)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.profile_id }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.profile_id }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.profile_id })
+                                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.id })
                             </td>
                         </tr>
                     }
