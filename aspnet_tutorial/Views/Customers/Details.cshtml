@@ -11,36 +11,44 @@
 <div class="panel-body">
 <table>
     <tbody>
-    <tr>
-        <td>
-            Name :
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.name)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Tel :
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.tel)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Address :
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.address)
-        </td>
-    </tr>
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tel :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.tel)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address :
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.address)
+            </td>
+        </tr>
     </tbody>
 </table>
         </div>
     </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.customer_id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
