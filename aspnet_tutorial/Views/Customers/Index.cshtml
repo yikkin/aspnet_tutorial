@@ -15,8 +15,9 @@
                    data-sort-name="name" data-sort-order="desc">
                 <thead>
                     <tr>
-                        <th data-sortable="true">Customer id</th>
+                        <th data-sortable="true">ID</th>
                         <th data-sortable="true">Name</th>
+                        <th data-sortable="true">Email</th>
                         <th data-sortable="true">Tel</th>
                         <th data-sortable="true">Address</th>
                         <th data-sortable="true">Option</th>
@@ -27,9 +28,12 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.customer_id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.id)</td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.email)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.tel)
@@ -38,9 +42,9 @@
                                 @Html.DisplayFor(modelItem => item.address)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new {id = item.customer_id}) |
-                                @Html.ActionLink("Details", "Details", new {id = item.customer_id}) |
-                                @Html.ActionLink("Delete", "Delete", new {id = item.customer_id})
+                                @Html.ActionLink("Edit", "Edit", new {id = item.id}) |
+                                @Html.ActionLink("Details", "Details", new {id = item.id}) |
+                                @Html.ActionLink("Delete", "Delete", new {id = item.id})
                             </td>
                         </tr>
                     }
