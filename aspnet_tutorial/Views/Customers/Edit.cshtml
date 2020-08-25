@@ -14,29 +14,35 @@
                 @using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.HiddenFor(model => model.customer_id)
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.id)
 
                     <div class="form-group">
                         <label> Name :</label>
-                        @Html.EditorFor(model => model.name, new {htmlAttributes = new {@class = "form-control"}})
-                        @Html.ValidationMessageFor(model => model.name, "", new {@class = "text-danger"})
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email :</label>
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
                         <label> Tel :</label>
-                        @Html.EditorFor(model => model.tel, new {htmlAttributes = new {@class = "form-control"}})
-                        @Html.ValidationMessageFor(model => model.tel, "", new {@class = "text-danger"})
+                        @Html.EditorFor(model => model.tel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.tel, "", new { @class = "text-danger" })
                     </div>
 
                     <div class="form-group">
                         <label>Address :</label>
-                        @Html.EditorFor(model => model.address, new {htmlAttributes = new {@class = "form-control"}})
-                        @Html.ValidationMessageFor(model => model.address, "", new {@class = "text-danger"})
+                        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
                     </div>
 
-                        <button type="submit" id="submit" class="btn btn-primary">Save</button>
-                        <button type="reset" name="reset" onclick="closed()" class="btn btn-default">Reset</button>
+                    <button type="submit" id="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" name="reset" onclick="closed()" class="btn btn-default">Reset</button>
                 }
             </div>
         </div>
