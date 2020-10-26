@@ -28,7 +28,7 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.id_user)
+                                @Html.DisplayFor(modelItem => item.id)
                             </td>
                             <td>@Html.DisplayFor(modelItem => item.profile.profile_name)</td>
                             <td>
@@ -38,9 +38,9 @@
                                 @Html.DisplayFor(modelItem => item.created_at)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new {id = item.id_user}) |
-                                @Html.ActionLink("Details", "Details", new {id = item.id_user}) |
-                                @Html.ActionLink("Delete", "Delete", new {id = item.id_user})
+                                @Html.ActionLink("Edit", "Edit", new {id = item.id}) |
+                                @Html.ActionLink("Details", "Details", new {id = item.id}) |
+                                @Html.ActionLink("Delete", "Delete", new {id = item.id})
                             </td>
                         </tr>
                     }
