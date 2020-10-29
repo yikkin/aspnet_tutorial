@@ -21,7 +21,7 @@ namespace aspnet_tutorial.Models
         }
     
         public int id { get; set; }
-        public string cat_name { get; set; }
+        public string category_name { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
         public Nullable<System.DateTime> updated_at { get; set; }
     
