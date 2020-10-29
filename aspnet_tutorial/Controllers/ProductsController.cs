@@ -39,7 +39,7 @@ namespace aspnet_tutorial.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.category_id = new SelectList(db.categories, "id", "cat_name");
+            ViewBag.category_id = new SelectList(db.categories, "id", "category_name");
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace aspnet_tutorial.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.category_id = new SelectList(db.categories, "category_id", "cat_name", product.category_id);
+            ViewBag.category_id = new SelectList(db.categories, "category_id", "category_name", product.category_id);
             return View(product);
         }
 
@@ -73,7 +73,7 @@ namespace aspnet_tutorial.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.category_id = new SelectList(db.categories, "id", "cat_name", product.category_id);
+            ViewBag.category_id = new SelectList(db.categories, "id", "category_name", product.category_id);
             return View(product);
         }
 
@@ -90,7 +90,7 @@ namespace aspnet_tutorial.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.category_id = new SelectList(db.categories, "id", "cat_name", product.category_id);
+            ViewBag.category_id = new SelectList(db.categories, "id", "category_name", product.category_id);
             return View(product);
         }
 
