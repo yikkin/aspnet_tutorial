@@ -52,7 +52,8 @@ namespace aspnet_tutorial
                 "~/Assets/js/font-awesome.min.js",
                 "~/Assets/js/html5shiv.min.js",
                 "~/Assets/js/lumino.glyphs.js",
-                "~/Assets/js/respond.min.js"
+                "~/Assets/js/respond.min.js",
+                "~/Assets/js/main.js"
             ));
 
             bundles.Add(new Bundle("~/Assets/fonts").Include(
