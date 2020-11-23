@@ -51,7 +51,6 @@ namespace aspnet_tutorial
                 "~/Assets/js/events.js",
                 "~/Assets/js/font-awesome.min.js",
                 "~/Assets/js/html5shiv.min.js",
-                "~/Assets/js/jquery-1.11.1.min.js",
                 "~/Assets/js/lumino.glyphs.js",
                 "~/Assets/js/respond.min.js"
             ));
