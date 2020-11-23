@@ -316,6 +316,7 @@
     <Content Include="Assets\js\html5shiv.min.js" />
     <Content Include="Assets\js\jquery-1.11.1.min.js" />
     <Content Include="Assets\js\lumino.glyphs.js" />
+    <Content Include="Assets\js\main.js" />
     <Content Include="Assets\js\respond.min.js" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
