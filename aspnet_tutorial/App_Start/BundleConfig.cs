@@ -44,8 +44,6 @@ namespace aspnet_tutorial
             bundles.Add(new ScriptBundle("~/Assets/js").Include(
                 "~/Assets/js/bootstrap-datepicker.js",
                 "~/Assets/js/bootstrap-table.js",
-                "~/Assets/js/bootstrap.js",
-                "~/Assets/js/bootstrap-min.js",
                 "~/Assets/js/chart-data.js",
                 "~/Assets/js/chart-min.js",
                 "~/Assets/js/easypiechart-data.js",
