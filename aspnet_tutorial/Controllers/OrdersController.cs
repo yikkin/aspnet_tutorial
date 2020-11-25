@@ -41,7 +41,6 @@ namespace aspnet_tutorial.Controllers
         {
             ViewBag.id = new SelectList(db.categories, "id", "category_name");
             ViewBag.customer_id = new SelectList(db.customers, "id", "name");
-            ViewBag.product_id = new SelectList(db.products, "id", "product_name");
             return View();
         }
 
