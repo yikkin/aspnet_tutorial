@@ -21,6 +21,13 @@ namespace aspnet_tutorial.Controllers
             return View(orders.ToList());
         }
 
+        public JsonResult getProducts(int id)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            List<product> products = db.products.Where(x => x.category_id == id).ToList();
+            return Json(products, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
@@ -39,7 +46,7 @@ namespace aspnet_tutorial.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.id = new SelectList(db.categories, "id", "category_name");
+            ViewBag.cat_id = new SelectList(db.categories, "id", "category_name");
             ViewBag.customer_id = new SelectList(db.customers, "id", "name");
             return View();
         }
