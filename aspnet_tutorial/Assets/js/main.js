@@ -5,7 +5,7 @@
         $.get('/Orders/getProducts', { id: id }, function (data) {
             $('#product_id').empty();
             $.each(data, function (index, row) {
-                $('#product_id').append("<option value='" + row.product_id + "'>" + row.product_name + "</option>")
+                $('#product_id').append("<option value='" + row.id + "'>" + row.product_name + "</option>")
             });
             });
     });
