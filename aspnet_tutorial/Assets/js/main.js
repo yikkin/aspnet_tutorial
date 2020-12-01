@@ -21,3 +21,13 @@ $(function () {
         });
     });
 });
+
+//Calcute the total
+$(function () {
+    $('#qty').on('change', function () {
+        var qty = $(this).val();
+        var unit_price = $('.unit-price').val();
+        var total = qty * unit_price;
+        $('#total').val(total);
+    });
+});
