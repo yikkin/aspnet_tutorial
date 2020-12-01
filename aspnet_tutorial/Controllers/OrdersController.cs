@@ -28,6 +28,13 @@ namespace aspnet_tutorial.Controllers
             return Json(products, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult getUnitPrice(int product_id)
+        {
+            db.Configuration.ProxyCreationEnabled = false;
+            var product = db.products.Where(p => p.id == product_id).ToList().FirstOrDefault();
+            return Json(product, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
